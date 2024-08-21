@@ -1,0 +1,41 @@
+body {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Update navbar styles */
+  .navbar {
+    padding-right: 0;
+    padding-left: 20px;
+  }
+  
+  .navbar-nav {
+    float: right;
+  }
+  
+  .navbar-nav li {
+    float: right;
+  }
+  
+  /* Update sidebar styles */
+  .sidebar {
+    float: right;
+  }
+  
+  .sidebar ul {
+    padding-right: 20px;
+  }
+  
+  /* Update content styles */
+  .content-wrapper {
+    padding-right: 20px;
+  }
+  
+  /* Update footer styles */
+  .footer {
+    padding-right: 20px;
+  }
+ 
+  .sidebar i{
+    margin-left: 10px !important;
+  }
