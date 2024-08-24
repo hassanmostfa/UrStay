@@ -4,7 +4,12 @@
 @section('title', 'كل المستخدمين')
 
 @section('contents')
-<button class="btn btn-primary m-3" style="background:#88394E !important;"><a style="color:white; text-decoration: none;" href="{{route('admin/user/create')}}">اضافة مستخدم جديد</a></button>
+<button class="btn btn-primary m-3" style="background:#88394E !important;">
+    <i class="fa-solid fa-plus"></i>
+    <a style="color:white; text-decoration: none; font-family: 'almarai' !important;" class="d-inline gap-2" href="{{route('admin/user/create')}}">
+        اضافة مستخدم جديد
+    </a>
+</button>
 <table class="table table-hover table-striped table-bordered text-center table-responsive mx-auto h-25 ">
     <thead>
         <th>#</th>

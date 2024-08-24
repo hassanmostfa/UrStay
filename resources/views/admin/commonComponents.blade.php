@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
     <div class="container-scroller">
@@ -30,6 +32,12 @@
         </div>
         </div>
         <!-- partial:partials/_navbar.html -->
+        <style>
+            nav a{
+                margin-right: 10px !important;
+                margin-left: 10px !important;
+            }
+        </style>
         <nav class=" main_navbar navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="padding-top: 0px !important ; margin-top: 0px!important;">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
             <a class="navbar-brand brand-logo text-center" href="index.html"><img src="{{asset('user-assets/images/logo.png')}}" alt="logo" /></a>
@@ -52,12 +60,12 @@
             <ul class="navbar-nav navbar-nav-left">
             <li class="nav-item nav-profile dropdown" >
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="nav-profile-img">
+                <div class="nav-profile-img mx-2">
                     <img src="{{asset('images/faces/face1.jpg')}}" alt="image">
                     <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                    <p class="mb-1 text-black">David Greymaax</p>
+                    <p class="mb-1 text-black">{{Auth::user()->name}}</p>
                 </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -77,39 +85,21 @@
                 <span class="count-symbol bg-warning"></span>
                 </a>
                 <div style="color:#88394E !important;" class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
+                <h6 class="p-3 mb-0 text-center">الرسائل</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                     <img src="{{asset('images/faces/face1.jpg')}}" alt="image" class="profile-pic">
                     </div>
                     <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">ارسل اليك حسن رسالة</h6>
+                    <p class="text-gray mb-0"> منذ 15 دقيقة </p>
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                    <img src="{{asset('images/faces/face2.jpg')}}" alt="image" class="profile-pic">
-                    </div>
-                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                    </div>
-                </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                    <img src="{{asset('images/faces/face3.jpg')}}" alt="image" class="profile-pic">
-                    </div>
-                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
-                    </div>
-                </a>
                 <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+                <h6 class="p-3 mb-0 text-center">4 رسائل جديدة</h6>
                 </div>
             </li>
             <li class="nav-item dropdown"style="color:#88394E !important;">
@@ -117,8 +107,8 @@
                 <i class="mdi mdi-bell-outline"></i>
                 <span class="count-symbol bg-danger"></span>
                 </a>
-                <div style="background-color:#88394E !important;" class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
+                <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                <h6 class="p-3 mb-0 text-center">الاشعارات</h6>
                 <div class="dropdown-divider " ></div>
                 <a class="dropdown-item preview-item" >
                     <div class="preview-thumbnail">
@@ -182,7 +172,7 @@
             <ul class="nav">
             <li class="nav-item nav-profile">
                 <a href="#" class="nav-link">
-                <div class="nav-profile-image">
+                <div class="nav-profile-image" style="margin-left: 10px !important;">
                     <img src="{{asset('images/faces/face1.jpg')}}" alt="profile" />
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
@@ -197,28 +187,50 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin/home')}}">
                     <i class="mdi mdi-home menu-icon" style="color:#88394E !important;"></i>
-                <span style="color:#88394E !important;">لوحة تحكم المشرف</span>
+                <span style="color:#88394E !important;" class="menu-title">لوحة تحكم المشرف</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                    <i class="menu-arrow" style="color:#88394E !important;"></i>
                     <i class="mdi mdi-crosshairs-gps menu-icon" style="color:#88394E !important;"></i></i>
-                <span style="color:#88394E !important;">التصنيفات</span>
+                    <span style="color:#88394E !important;"  class="menu-title">التصنيفات</span>
+                    <i class="menu-arrow" style="color:#88394E !important;"></i>
                 </a>
                 <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
                         <a class="nav-link" style="color:#000 !important;" href="{{route('admin/categories')}}">كل التصنيفات</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/categories/create')}}"> اضافة تصنيف</a>
+                    </li>
                 </ul>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="ui-basic">
+                <i class="fa-solid fa-users" style="color:#88394E !important;"></i>
+                    <span style="color:#88394E !important;"  class="menu-title" >المستخدمين</span>
+                    <i class="menu-arrow" style="color:#88394E !important;"></i>
+                </a>
+                <div class="collapse" id="users">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/users')}}">كل المستخدمين</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/user/create')}}">اضافة مستخدم جديد</a>
+                    </li>
+                </ul>
+                </div>
+            </li>
+            
             </ul>
         </nav>
         <!-- partial -->
         <div class="w-100" style="background-color: #f5f5f5;">
-            <h2 class="m-3">@yield('title')</h2>
+
             @yield('contents')
         </div>
             <!-- content-wrapper ends -->

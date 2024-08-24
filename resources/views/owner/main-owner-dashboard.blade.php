@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+
+    <!-- <link rel="stylesheet" href="{{asset('Styling/main.css')}}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     </head>
     <body>
     <div class="container-scroller">
@@ -30,6 +34,12 @@
         </div>
         </div>
         <!-- partial:partials/_navbar.html -->
+         <style>
+            nav a{
+                margin-right: 10px !important;
+                margin-left: 10px !important;
+            }
+         </style>
         <nav class=" main_navbar navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" style="padding-top: 0px !important ; margin-top: 0px!important;">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
             <a class="navbar-brand brand-logo text-center" href="index.html"><img src="{{asset('user-assets/images/logo.png')}}" alt="logo" /></a>
@@ -42,22 +52,22 @@
             <div class="search-field d-none d-md-block">
             <form class="d-flex align-items-center h-100" action="#">
                 <div class="input-group">
-                <div class="input-group-prepend bg-transparent">
-                    <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                    <div class="input-group-prepend bg-transparent">
+                        <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                    </div>
+                    <input type="text" class="form-control bg-transparent border-0" placeholder="بحث">
                 </div>
             </form>
             </div>
             <ul class="navbar-nav navbar-nav-left">
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <div class="nav-profile-img">
+                <div class="nav-profile-img" style = "margin-left: 10px !important;">
                     <img src="{{asset('images/faces/face1.jpg')}}" alt="image">
                     <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                    <p class="mb-1 text-black">David Greymaax</p>
+                    <p class="mb-1 text-black">{{Auth::user()->name}}</p>
                 </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -77,39 +87,19 @@
                 <span class="count-symbol bg-warning"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                <h6 class="p-3 mb-0">Messages</h6>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                    <img src="{{asset('images/faces/face1.jpg')}}" alt="image" class="profile-pic">
-                    </div>
-                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                    <p class="text-gray mb-0"> 1 Minutes ago </p>
-                    </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                    <img src="{{asset('images/faces/face2.jpg')}}" alt="image" class="profile-pic">
-                    </div>
-                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                    <p class="text-gray mb-0"> 15 Minutes ago </p>
-                    </div>
-                </a>
+                <h6 class="p-3 mb-0 text-center">الرسائل</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                     <img src="{{asset('images/faces/face3.jpg')}}" alt="image" class="profile-pic">
                     </div>
                     <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                    <p class="text-gray mb-0"> 18 Minutes ago </p>
+                    <h6 class="preview-subject ellipsis mb-1 font-weight-normal">نص الرسالة</h6>
+                    <p class="text-gray mb-0"> منذ 4 ساعات </p>
                     </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <h6 class="p-3 mb-0 text-center">4 new messages</h6>
+                <h6 class="p-3 mb-0 text-center">4 رسائل غير مقروءة</h6>
                 </div>
             </li>
             <li class="nav-item dropdown" style="color:#88394E !important;">
@@ -118,7 +108,7 @@
                 <span class="count-symbol bg-danger"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                <h6 class="p-3 mb-0">Notifications</h6>
+                <h6 class="p-3 mb-0">الاشعارات</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
@@ -182,7 +172,7 @@
     <ul class="nav">
         <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
-                <div class="nav-profile-image">
+                <div class="nav-profile-image" style="margin-left: 10px;">
                     <img src="{{ asset('images/faces/face1.jpg') }}" alt="profile" />
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
@@ -195,24 +185,24 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('owner/dashboard') }}">
+            <a class="nav-link" href="{{ route('owner/home') }}">
                 <i class="mdi mdi-home menu-icon" style="color:#88394E !important;"></i>
                 <span style="color:#88394E !important;" class="menu-title">لوحة التحكم</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="mdi mdi-crosshairs-gps menu-icon" style="color:#88394E !important;"></i>
+            <i class="fa-solid fa-building" style="color:#88394E !important;"></i>
                 <span class="menu-title" style="color:#88394E !important;">الوحدات</span>
                 <i class="menu-arrow" style="color:#88394E !important;"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu" style="color:#000 !important;">
                     <li class="nav-item">
-                        <a class="nav-link" style="color:#000 !important;" href="{{ route('owner/dashboard') }}">كل الوحدات</a>
+                        <a class="nav-link" style="color:#000 !important;" href="{{ route('owner/units') }}">كل الوحدات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('owner/create-unit') }}"> اضافة وحدة جديدة</a>
+                        <a class="nav-link"  href="{{ route('owner/create-unit') }}"> اضافة وحدة </a>
                     </li>
                 </ul>
             </div>
@@ -222,7 +212,6 @@
 
         <!-- partial -->
         <div class="w-100" style="background-color: #f5f5f5;">
-            <h2 class="m-3">@yield('title')</h2>
             @yield('contents')
         </div>
             <!-- content-wrapper ends -->

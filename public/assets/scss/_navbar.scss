@@ -1,7 +1,6 @@
 /* Navbar */
 
 .navbar {
-  font-family: $type1-light;
   background: $navbar-bg;
   transition: background $action-transition-duration $action-transition-timing-function;
   -webkit-transition: background $action-transition-duration $action-transition-timing-function;
@@ -121,7 +120,6 @@
           @include input-placeholder {
             font-size: $navbar-font-size;
             color: $navbar-menu-color;
-            font-family: $type1-light;
           }
         }
 

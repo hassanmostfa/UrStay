@@ -3,7 +3,6 @@
 .sidebar {
   min-height: calc(100vh - #{$navbar-height});
   background: $sidebar-light-bg;
-  font-family: $type1-regular;
   padding: 0;
   width: $sidebar-width-lg;
   z-index: 11;
@@ -110,7 +109,6 @@
         > .nav-link {
           .menu-title {
             color:#88394E;
-            font-family: $type1-medium;
           }
           i {
             color: $primary;

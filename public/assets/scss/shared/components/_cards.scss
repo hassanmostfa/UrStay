@@ -13,19 +13,16 @@
     color: $card-title-color;
     margin-bottom: 0.75rem;
     text-transform: capitalize;
-    font-family: $type1-medium;
     font-size: 1.125rem;
   }
   .card-subtitle {
     @extend .text-gray;
-    font-family: $type1-regular;
     margin-top: 0.625rem;
     margin-bottom: 0.625rem;
   }
   .card-description {
     color: $card-description-color;
     margin-bottom: 1.5rem;
-    font-family: $type1-regular;
   }
   &.card-outline-success {
     border: 1px solid map-get($theme-colors, 'success');

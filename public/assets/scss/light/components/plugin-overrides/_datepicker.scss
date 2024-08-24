@@ -36,7 +36,6 @@
               background: $white;
             }
             &.dow {
-              font-family: $type1-regular;
               color: $gray;
               font-size: 0.875rem;
               font-weight: initial;
@@ -289,7 +288,6 @@
                   @media (max-width: 991px) {
                     padding: 2rem 0.5rem;
                   }
-                  font-family: $type1-bold;
                   &:first-child {
                     padding-left: 2.5rem;
                     @media (max-width: 991px) {

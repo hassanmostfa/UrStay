@@ -11,19 +11,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $units = Unit::paginate(6);
+        $units = Unit::paginate(8);
         return view('home', compact('units'));
     }
 
     public function adminHome()
     {
-        // Return all users
-        $users = User::all();
-        return view('admin.users.dashboard' , compact('users'));
+
+        return view('admin.mainDashBoard');
     }
 
     public function ownerHome()
     {
-        return view('owner.dashboard');
+        return view('owner.ownerHome');
     }
 }

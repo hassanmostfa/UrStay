@@ -44,6 +44,7 @@ Route::get('/home', function () {
 Route::middleware('auth' , 'user_access:admin')->group(function () {
     // Admin Features
     Route::get('/admin/home', [HomeController::class,'adminHome'])->name('admin/home');
+    Route::get('/admin/users', [AdminController::class,'index'])->name('admin/users');
     Route::get('/admin/user/create', [AdminController::class,'create'])->name('admin/user/create');
     Route::post('/admin/user/store', [AdminController::class,'store'])->name('admin/user/store');
     Route::get('/admin/user/edit/{id}', [AdminController::class,'edit'])->name('admin/user/edit');
@@ -61,8 +62,8 @@ Route::middleware('auth' , 'user_access:admin')->group(function () {
 
 Route::middleware('auth' , 'user_access:owner')->group(function () {
     // Owner Features
-    // Route::get('/owner/dashboard', [HomeController::class,'ownerHome'])->name('owner/dashboard');
-    Route::get('/owner/dashboard', [UnitsController::class,'index'])->name('owner/dashboard');
+    Route::get('/owner/home', [HomeController::class,'ownerHome'])->name('owner/home');
+    Route::get('/owner/units', [UnitsController::class,'index'])->name('owner/units');
     Route::get('/owner/unit/create', [UnitsController::class,'create'])->name('owner/create-unit');
     Route::post('/owner/unit/store', [UnitsController::class,'store'])->name('owner/store-unit');
     Route::get('/owner/unit/edit/{id}', [UnitsController::class,'edit'])->name('owner/unit/edit');
