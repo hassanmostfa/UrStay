@@ -19,11 +19,11 @@
                 <img src="{{asset('user-assets/images/logo.png')}}" alt="logo" width="100px">
             </div>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <div class="px-6 space-y-4 md:space-y-6 sm:p-8">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         انشاء حساب جديد
                     </h1>
-                    <form action="{{ route('register.save') }}" method="POST" class="space-y-2 md:space-y-2">
+                    <form enctype="multipart/form-data" action="{{ route('register.save') }}" method="POST" class="space-y-2 md:space-y-2">
                         @csrf
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">الاسم</label>
@@ -60,6 +60,14 @@
                             <label for="confirm-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">تاكيد كلمة المرور</label>
                             <input type="confirm-password" name="password_confirmation" id="password_confirmation" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
                             @error('password_confirmation')
+                            <span class="text-red-600">{{ $message }}</span>
+                            @enderror
+                        </div>
+                            <!-- New file input for personal ID -->
+                        <div>
+                            <label for="pid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">الهوية الشخصية</label>
+                            <input type="file" name="pid" id="pid" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                            @error('pid')
                             <span class="text-red-600">{{ $message }}</span>
                             @enderror
                         </div>

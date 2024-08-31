@@ -222,6 +222,46 @@
                     <li class="nav-item">
                         <a class="nav-link" style="color:#000 !important;" href="{{route('admin/user/create')}}">اضافة مستخدم جديد</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/users/new-requests')}}">طلبات المستخدمين </a>
+                    </li>
+                </ul>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#units" aria-expanded="false" aria-controls="ui-basic">
+                <i class="fa fa-building-o" style="color:#88394E !important;" aria-hidden="true"></i>
+                    <span style="color:#88394E !important;"  class="menu-title" >الوحدات</span>
+                    <i class="menu-arrow" style="color:#88394E !important;"></i>
+                </a>
+                <div class="collapse" id="units">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/units')}}"> كل الوحدات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/units/new-requests')}}">طلبات الوحدات</a>
+                    </li>
+                </ul>
+                </div>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#bookings" aria-expanded="false" aria-controls="ui-basic">
+                <i class="fa fa-calendar-check-o" style="color:#88394E !important;" aria-hidden="true"></i>
+                    <span style="color:#88394E !important;"  class="menu-title" >الحجوزات</span>
+                    <i class="menu-arrow" style="color:#88394E !important;"></i>
+                </a>
+                <div class="collapse" id="bookings">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/bookings')}}"> كل الحجوزات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#000 !important;" href="{{route('admin/bookings/new-requests')}}">طلبات الحجز</a>
+                    </li>
                 </ul>
                 </div>
             </li>

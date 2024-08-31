@@ -27,22 +27,24 @@
 <link href="user-assets/css/style.css" rel="stylesheet">
 <link href="user-assets/css/responsive.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 
 </head>
-
-
 <!-- page wrapper -->
 <body>
-
     <div class="boxed_wrapper">
-
-
         <!-- preloader -->
         <div class="preloader"></div>
         <!-- preloader -->
 
+        @if(session('success'))
+            <div class="alert alert-success text-center" style="z-index: 9999; font-size: 20px;">{{ session('success') }}</div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger text-center" style="z-index: 9999; font-size: 20px;">{{ session('error') }}</div>
+        @endif
 
         <!-- main header -->
         <header class="main-header style-one">
@@ -81,6 +83,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- header-lower -->
             <div class="auto-container">
@@ -347,10 +350,10 @@
 
         <!-- units-section -->
         <section class="my-5 py-2" style="background-image: url(user-assets/images/shape/shape-7.png);">
-    <h1 class="text-center my-5 text-bold" style="color:#88394E !important; font-size: 40px; font-weight: 700;">الوحدات</h1>
+        <h1 class="text-center my-5 text-bold" style="color:#88394E !important; font-size: 40px; font-weight: 700;">الوحدات</h1>
 
     @foreach ($units->chunk(4) as $unitChunk)
-    <div class="row px-5">
+    <div class="row px-2">
         @foreach ($unitChunk as $unit)
         <!-- Card -->
         <style>
@@ -365,7 +368,7 @@
             <div class="card text-right shadow">
                 <img style="height: 200px;" src="{{ asset('uploads/'.$unit->unit_image) }}" class="card-img-top" alt="Unit Image">
                 <div class="card-body">
-                    <h5 class="card-title" style="font-size: 18px !important;">{{ $unit->unit_title }}</h5>
+                    <h5 class="card-title" style="font-size: 16px !important;">{{ $unit->unit_title }}</h5>
                     <span><i class="mr-2" style="color:#ffd700 !important;"><i class="fas fa-star"></i></i> التقييم : {{ $unit->rate }}</span><br>
                     <span style="background-color:#ececec; color:#000;" class="badge rounded"> الغرف : {{ $unit->unit_rooms }}</span>
                     <span style="background-color:#ececec; color:#000;" class="badge rounded ml-2"> الحمامات : {{ $unit->unit_bathrooms }}</span>
@@ -373,7 +376,7 @@
                     <span>السعر : {{ $unit->unit_price }} ريال سعودي</span><br>
                     <span>الموقع : {{ $unit->unit_location }}</span>
                     <br>
-                    <a href="#" class="btn btn-primary mt-2">تفاصيل اكثر</a>
+                    <a href="{{ route('show-unit-details', $unit->id) }}" class="btn btn-primary mt-2">تفاصيل اكثر</a>
                 </div>
             </div>
         </div>

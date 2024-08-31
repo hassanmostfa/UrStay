@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password',
         'role',
         'image',
+        'pid',
+        'status',
     ];
 
     /**
@@ -54,4 +56,14 @@ class User extends Authenticatable
             get: fn ($value) => ["user", "admin"][$value],
         );
     }
+
+
+    public function bookings() {
+        return $this->hasMany(Booking::class);
+    }
+
+    public function ownedUnits() {
+        return $this->hasMany(Unit::class, 'owner_id');
+    }
+    
 }

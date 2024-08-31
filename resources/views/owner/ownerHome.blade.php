@@ -4,6 +4,13 @@
 
 @section('contents')
     <!-- partial -->
+    @if(session('success'))
+            <div class="alert alert-success text-center" style="z-index: 9999; font-size: 20px;">{{ session('success') }}</div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger text-center" style="z-index: 9999; font-size: 20px;">{{ session('error') }}</div>
+        @endif
     <div class="main-panel w-100 container">
         <div class="content-wrapper" style="background-color: transparent !important;">
             <div class="page-header">

@@ -13,7 +13,7 @@
     <div class="px-4 py-6 sm:px-0">
         <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
             <hr />
-            <form action="{{ route('admin/user/store') }}" method="POST" class="container">
+            <form enctype="multipart/form-data" action="{{ route('admin/user/store') }}" method="POST" class="container">
     @csrf
 
     <!-- Card 1 -->
@@ -26,6 +26,11 @@
             <div class="form-group">
                 <label for="name" class="form-label">الاسم</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="أدخل الاسم">
+            </div>
+
+            <div class="form-group">
+                <label for="pid" class="form-label">الهوية الشخصية</label>
+                <input type="file" name="pid" id="pid" class="form-control" placeholder="أدخل الهوية">
             </div>
 
             <div class="form-group text-end">
@@ -59,7 +64,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary d-block m-auto my-3" style="background:#88394E !important;">اضافة</button>
+    <button type="submit" class="btn btn-primary d-block m-auto my-3" style="background:#88394E !important; font-family: 'almarai' !important;">اضافة</button>
 </form>
 
         </div>

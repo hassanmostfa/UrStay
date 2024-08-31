@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary  d-block m-auto my-3" style="background:#88394E !important;">تنفيذ</button>
+    <button type="submit" class="btn btn-primary  d-block m-auto my-3" style="background:#88394E !important; font-family: 'almarai' !important;">تنفيذ</button>
 </form>
 
 

@@ -36,7 +36,7 @@ body {
   }
   
   .sidebar ul {
-    padding-right: 20px;
+    padding-right: 0px;
   }
   
   /* Update content styles */
@@ -71,4 +71,16 @@ body {
 
   .navbar .navbar-brand-wrapper .navbar-brand{
     padding-left: 0 !important;
+  }
+
+  .card .card-body {
+    padding: 10px 20px !important;
+  }
+
+  .content-wrapper{
+    padding: 15px !important;
+  }
+
+  li{
+    list-style-type: none;
   }

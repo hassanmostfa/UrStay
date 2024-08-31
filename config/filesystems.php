@@ -72,6 +72,8 @@ return [
     'links' => [
         public_path('unitsImages') => storage_path('app/unitsImages'),
         public_path('usersImages') => storage_path('app/usersImages'),
+        public_path('usersPids') => storage_path('app/usersPids'),
+        public_path('unitsLisences') => storage_path('app/unitsLisences'),
     ],
 
 ];

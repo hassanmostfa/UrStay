@@ -14,7 +14,6 @@
             <hr />
             <form action="{{ route('owner/store-unit') }}" enctype="multipart/form-data" method="POST" class="container p-4 bg-light shadow-sm rounded">
     @csrf
-    
     <!-- Card 1 -->
     <div class="card mb-4 shadow">
         <div class="card-header bg-white">
@@ -26,6 +25,11 @@
                     <label class="form-label">اسم المالك</label>
                     <input type="text" name="owner_name" id="name" class="form-control" placeholder="Enter owner name">
                 </div>
+
+                <!-- To send owner id -->
+                <input type="hidden" name="owner_id" id="owner_id" class="form-control" value="{{ Auth::user()->id }}">
+                <!-- To send owner id -->
+                
                 <div class="col-md-6">
                     <label class="form-label">العنوان (الوصف المختصر للوحدة)</label>
                     <input type="text" name="unit_title" id="title" class="form-control" placeholder="Enter unit title">
@@ -91,7 +95,7 @@
                 <div class="col-md-6">
                     <label class="form-label">الحالة</label>
                     <select name="unit_status" id="unit_status" class="form-select">
-                        <option value="2">اختر الحالة</option>
+                        <option value="متاح">اختر الحالة</option>
                         <option value="متاح">متاح</option>
                         <option value="غير متاح">غير متاح</option>
                     </select>
@@ -125,6 +129,18 @@
                 <div class="col-md-6">
                     <label class="form-label">صورة الوحدة</label>
                     <input type="file" name="unit_image" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label">الرخصة الاولي</label>
+                    <input type="file" name="lisence_one" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">الرخصة الثانية</label>
+                    <input type="file" name="lisence_two" class="form-control">
                 </div>
             </div>
         </div>

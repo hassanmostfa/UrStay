@@ -17,8 +17,10 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-
-        return view('admin.mainDashBoard');
+        $allUsers = User::where('status', 'approved')->count();
+        $pendingUsers = User::where('status', 'pending')->count();
+        $pendingUnits = Unit::where('request_status', 'pending')->count();
+        return view('admin.mainDashBoard', compact('allUsers', 'pendingUsers', 'pendingUnits'));
     }
 
     public function ownerHome()

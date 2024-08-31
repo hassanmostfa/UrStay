@@ -3,6 +3,15 @@
 @section('title', 'لوحة التحكم')
 
 @section('contents')
+
+    @if(session('success'))
+        <div class="alert alert-success text-center" style="z-index: 9999; font-size: 20px;">{{ session('success') }}</div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger text-center" style="z-index: 9999; font-size: 20px;">{{ session('error') }}</div>
+    @endif
+
     <!-- partial -->
     <div class="main-panel w-100 container">
         <div class="content-wrapper" style="background-color: transparent !important;">
@@ -25,10 +34,9 @@
                 <div class="card bg-gradient-danger card-img-holder text-white">
                   <div class="card-body">
                     <img src="{{asset('images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">عدد الوحدات <i class="mdi mdi-chart-line mdi-24px float-end"></i>
+                    <h4 class="font-weight-normal mb-3">طلبات المستخدمين الجدد<i class="mdi mdi-chart-line mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">$ 15,0000</h2>
-                    <h6 class="card-text">Increased by 60%</h6>
+                    <h2 class="mb-5">{{$pendingUsers}}</h2>
                   </div>
                 </div>
               </div>
@@ -36,10 +44,9 @@
                 <div class="card bg-gradient-info card-img-holder text-white">
                   <div class="card-body">
                     <img src="{{asset('images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
-                    <h4 class="font-weight-normal mb-3">عدد التصنيفات <i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
+                    <h4 class="font-weight-normal mb-3">طلبات الوحدات الجديدة<i class="mdi mdi-bookmark-outline mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">45,6334</h2>
-                    <h6 class="card-text">Decreased by 10%</h6>
+                    <h2 class="mb-5">{{$pendingUnits}}</h2>
                   </div>
                 </div>
               </div>
@@ -49,8 +56,7 @@
                     <img src="{{asset('images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
                     <h4 class="font-weight-bold font-size-20 mb-3">عدد المستخدمين <i class="ml-2 mdi mdi-diamond mdi-24px float-end"></i>
                     </h4>
-                    <h2 class="mb-5">95,5741</h2>
-                    <h6 class="card-text">Increased by 5%</h6>
+                    <h2 class="mb-5">{{$allUsers}}</h2>
                   </div>
                 </div>
               </div>

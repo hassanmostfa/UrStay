@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Log;
 class AuthController extends Controller
 {
     public function __construct(){
@@ -18,23 +20,21 @@ class AuthController extends Controller
     }
 
     public function registerSave(Request $request){
-        Validator::make($request->all(), [
-            'name' => ['required'],
-            'email' => ['required', 'email'],
-            'password' => ['required' , 'confirmed'],
-        ])->validate();
+        
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'pid' => 'required|file|mimes:pdf,jpg,png,jpeg|max:2048',
+        ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
-            'image' => $request->image->store('usersImages'),
+            'pid' => $request->file('pid')->store('usersPids'),
         ]);
-
-        return redirect()->route('login');
+        return redirect()->route('home')->with('success', 'تم التسجيل بنجاح الطلب قيد المراجعة');
     }
-
     public function login(){
         return view('auth.login');
     }
@@ -53,11 +53,16 @@ class AuthController extends Controller
 
         if(Auth::user()->role == 'admin'){
             return redirect()->route('admin/home');
-        }elseif (Auth::user()->role == 'owner') {
-            return redirect()->route('owner/dashboard');
+        }elseif (Auth::user()->role == 'owner' && Auth::user()->status == "approved") {
+            return redirect()->route('owner/home');
+        }
+        elseif(Auth::user()->status == "pending"){
+            return redirect()->route('home')->with('error', 'عفوا طلبكم لا يزال قيد المراجعة');
+        }elseif(Auth::user()->role == "user" && Auth::user()->status == "approved"){
+            return redirect()->route('home');
         }
         else{
-            return redirect()->route('home');
+            return redirect()->route('login')->with('error', 'يجب تسجيل الدخول اولا'); 
         }
     }
 
