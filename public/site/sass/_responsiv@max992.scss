@@ -1,0 +1,220 @@
+@media (max-width: 992.98px) {
+
+    .hero {
+        .container {
+
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 20px;
+                max-width: 610px;
+            }
+
+            .btns {
+                a {
+                    img {
+                        width: 180px;
+                    }
+                }
+            }
+        }
+    }
+
+    .boost-your-growth {
+        .container {
+            h1 {
+                font-size: 56px;
+            }
+
+            p {
+                font-size: 26px;
+                margin-top: 32px;
+            }
+
+            .line-part {
+                .text {
+                    position: relative;
+                    top: 0;
+                    flex-direction: column;
+                    align-items: start;
+
+                    h2 {
+                        font-size: 42px;
+                        margin-bottom: 0;
+                        padding: 0;
+                    }
+
+                    p {
+                        max-width: 100%;
+                        font-size: 17px;
+                        margin: 0;
+                    }
+                }
+
+                .bottom {
+                    padding: 0 32px;
+
+                    >div {
+                        h2 {
+                            font-size: 22px;
+                            min-width: 170px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .meets-need {
+        .container {
+            .cards_wrapper {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    }
+
+    .our-vision {
+        .container {
+            h1 {
+                font-size: 39px;
+                line-height: 55px;
+            }
+
+            h1.middle {
+                span {
+                    &:first-child {
+                        font-size: 110px;
+                    }
+                }
+            }
+
+            .statistics {
+                gap: 16px;
+                margin: 72px 0;
+
+                div {
+                    font-size: 29px;
+                    line-height: 29px;
+
+                    span {
+                        width: 90px;
+                        min-height: 90px;
+                        font-size: 38px;
+                    }
+                }
+            }
+
+            img {
+                width: 500px;
+            }
+        }
+    }
+
+
+
+    .enjoy {
+        .container {
+            .cards-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px 0;
+
+                .intro {
+                    font-size: 24px;
+                    font-family: MainFontLight;
+                }
+
+                h1 {
+                    font-size: 41px;
+                    font-family: MainFontBold;
+                    color: #301c3e;
+                }
+
+                .sub-title {
+                    font-size: 16px;
+                    font-family: MainFontLight;
+                }
+
+                .card {
+                    &:nth-child(odd):not(:first-child) {
+                        display: flex;
+                        justify-content: end;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translateY(100px);
+
+                        img {
+                            margin-right: 70px;
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        margin-top: -50px;
+                    }
+
+                    &:nth-child(7) {
+                        margin-top: -50px;
+                    }
+                }
+
+                img {
+                    height: 110px
+                }
+            }
+        }
+    }
+
+
+
+    .marketing {
+        .container {
+            h1 {
+                font-size: 42px;
+            }
+
+            img {
+                margin-top: 48px
+            }
+        }
+    }
+
+    .neggotiate {
+        padding: 72px 0;
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            >div {
+                img {
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+
+    .why-wait {
+        .container {
+            h1 {
+                font-size: 80px;
+            }
+            p {
+                font-size: 20px;
+                padding: 0 20px;
+                margin-bottom: 40px;
+                max-width: 750px;
+            }
+            img {
+                width: 100%;
+                max-width: 750px;
+                margin: auto;
+                display: block
+            }
+        }
+    }
+
+
+}

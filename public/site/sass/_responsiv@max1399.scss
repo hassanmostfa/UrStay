@@ -1,0 +1,180 @@
+@media (max-width: 1399.98px) {
+
+    header {
+        .container {
+            .logo {
+                width: 130px;
+            }
+            form {
+                input {
+                    font-size: 18px;
+                }
+            }
+            nav {
+                font-size: 18px;
+                gap: 16px;
+                margin-left: 16px;
+            }
+            .btn {
+                a {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .hero {
+        .container {
+            h1 {
+                font-size: 70px;
+            }
+            p {
+                font-size: 28px;
+                max-width: 850px;
+            }
+            .btns {
+                a {
+                    img {
+                        width: 230px;
+                    }
+                }
+            }
+        }
+    }
+
+    .boost-your-growth {
+        .container {
+            h1 {
+                font-size: 59px;
+                &::before {
+                    height: 8px;
+                    width: 40%;
+                }
+            }
+            p {
+                font-size: 26px;
+                margin-top: 32px;
+                svg {
+                    width: 17px;
+                    height: 12px;
+                    margin-left: 12px;
+                }
+            }
+            .line-part {
+                .text {
+                    h2 {
+                        font-size: 48px;
+                    }
+                    p {
+                        max-width: 420px;
+                        font-size: 20px;
+                    }
+                }
+                .bottom {
+                    padding: 0 190px;
+                }
+            }
+        }
+    }
+
+    .our-vision {
+        .container {
+            h1 {
+                font-size: 61px;
+                line-height: 88px;
+            }
+            .middle {
+                span {
+                    &:first-child {
+                        font-size: 130px;
+                    }
+                }
+            }
+            .statistics {
+                div {
+                    font-size: 37px;
+                }
+            }
+            img {
+                width: 570px;
+            }
+        }
+    }
+
+    .enjoy {
+        .container {
+            .cards-wrapper {
+                display: grid;
+                grid-template-columns:  1fr 1fr;
+                gap: 16px 0;
+                .intro {
+                    font-size: 28px;
+                    font-family: MainFontLight;
+                }
+                h1 {
+                    font-size: 45px;
+                    font-family: MainFontBold;
+                    color: #301c3e;
+                }
+                .sub-title {
+                    font-size: 16px;
+                    font-family: MainFontLight;
+                }
+                .card {
+                    &:nth-child(odd):not(:first-child) {
+                        display: flex;
+                        justify-content: end;
+                    }
+                    &:nth-child(2) {
+                        transform: translateY(100px);
+                        img {
+                            margin-right: 80px;
+                        }
+                    }
+                    &:nth-child(6) {
+                        margin-top: -55px;
+                    }
+                    &:nth-child(7) {
+                        margin-top: -56px;
+                    }
+                }
+                img {
+                    height: 150px
+                }
+            }
+        }
+    }
+
+
+    .marketing {
+        .container {
+            h1 {
+                font-size: 55px;
+            }
+            img {
+                margin-top: 60px
+            }
+        }
+    }
+
+    .why-wait {
+        .container {
+            h1 {
+                font-size: 90px;
+            }
+            p {
+                font-size: 24px;
+                padding: 0 24px;
+                margin-bottom: 48px;
+                max-width: 900px;
+            }
+            img {
+                width: 100%;
+                max-width: 900px;
+                margin: auto;
+                display: block
+            }
+        }
+    }
+
+}

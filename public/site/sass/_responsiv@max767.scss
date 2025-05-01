@@ -1,0 +1,194 @@
+@media (max-width: 767.98px) {
+
+    .boost-your-growth {
+        padding: 40px 0;
+        .container {
+            h1 {
+                font-size: 43px;
+            }
+            p {
+                font-size: 20px;
+                margin-top: 24px;
+                svg {
+                    width: 14px;
+                    height: 11px;
+                    margin-left: 12px;
+                    margin-top: 10px;
+                }
+            }
+            .line-part {
+                .text {
+                    position: relative;
+                    top: 0;
+                    flex-direction: column;
+                    align-items: start;
+                    h2 {
+                        font-size: 33px;
+                        margin-bottom: 0;
+                        padding: 0;
+                    }
+                    p {
+                        max-width: 100%;
+                        font-size: 16px;
+                        margin: 0;
+                    }
+                }
+                .bottom {
+                    padding: 0;
+                    >div {
+                        h2 {
+                            font-size: 22px;
+                            min-width: 150px;
+                        }
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .our-vision {
+        .container {
+            h1 {
+                font-size: 34px;
+                line-height: 46px;
+            }
+            h1.middle  {
+                span {
+                    &:first-child {
+                        font-size: 93px;
+                    }
+                }
+            }
+            .statistics {
+                gap: 40px;
+                margin: 62px 0;
+                flex-direction: column;
+                align-items: start;
+                div {
+                    font-size: 29px;
+                    line-height: 29px;
+                    span {
+                        width: 90px;
+                        min-height: 90px;
+                        font-size: 38px;
+                    }
+                }
+            }
+            img {
+                width: 450px;
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+
+
+
+    .enjoy {
+        .container {
+            .cards-wrapper {
+                display: grid;
+                grid-template-columns:  1fr;
+                gap: 16px 0;
+                .intro {
+                    font-size: 24px;
+                    font-family: MainFontLight;
+                }
+                h1 {
+                    font-size: 41px;
+                    font-family: MainFontBold;
+                    color: #301c3e;
+                }
+                .sub-title {
+                    font-size: 16px;
+                    font-family: MainFontLight;
+                }
+                .card {
+                    &:nth-child(odd):not(:first-child) {
+                        display: flex;
+                        justify-content: start;
+                    }
+                    &:nth-child(2) {
+                        transform: translateY(0);
+                        img {
+                            margin-right: 0;
+                        }
+                    }
+                    &:nth-child(3) {
+                        margin-top: -40px;
+                        display: flex;
+                        justify-content: start;
+                    }
+                    &:nth-child(6) {
+                        margin-top: -40px;
+                        grid-row: 3;
+                        display: flex;
+                        justify-content: end;
+                    }
+                    &:nth-child(7) {
+                        margin-top: -0;
+                        margin-top: -60px;
+                        display: flex;
+                        justify-content: end !important;
+                    }
+                }
+                img {
+                    height: 110px
+                }
+                .div:not(.card) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .map {
+        background-color: #f7f5f4;
+        position: relative;
+        padding-top: 54px;
+        img {
+            width: 100%;
+            margin-bottom: -10px;
+        }
+        .text {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            h1 {
+                font-family: MainFontBold;
+                color: #301c3e;
+            }
+            p {
+                font-size: 13px
+            }
+        }
+    }
+
+    .why-wait {
+        .container {
+            h1 {
+                font-size: 60px;
+            }
+            p {
+                font-size: 18px;
+                padding: 0 20px;
+                margin-bottom: 32px;
+                max-width: 750px;
+            }
+            img {
+                width: 100%;
+                max-width: 750px;
+                margin: auto;
+                display: block
+            }
+        }
+    }
+
+
+
+
+}
